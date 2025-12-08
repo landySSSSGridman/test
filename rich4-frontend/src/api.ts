@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GameState, Player, Card, DiceRollResult } from './types';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'http://localhost:5555/api';
 
 export const gameApi = {
   createGame: async (): Promise<GameState> => {

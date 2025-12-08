@@ -66,13 +66,16 @@ function App() {
       setDiceResult(result);
       
       const currentPlayer = gameState.players[gameState.currentPlayerIndex];
-      await gameApi.movePlayer(gameId, currentPlayer.id, result.total);
+      const currentPlayerId = currentPlayer.id;
+      await gameApi.movePlayer(gameId, currentPlayerId, result.total);
       
       const updatedGame = await gameApi.getGame(gameId);
       setGameState(updatedGame);
       setHasRolled(true);
       
-      const newPosition = updatedGame.players[updatedGame.currentPlayerIndex].position;
+      // Find the position of the player who just moved
+      const movedPlayer = updatedGame.players.find(p => p.id === currentPlayerId);
+      const newPosition = movedPlayer?.position || 0;
       setSelectedPosition(newPosition);
       showMessage(`擲出 ${result.total}！移動到格子 ${newPosition}`);
     } catch (error) {
