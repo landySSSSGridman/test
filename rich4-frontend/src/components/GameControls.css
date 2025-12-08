@@ -1,0 +1,116 @@
+.game-controls {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.game-controls h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.5em;
+  color: #333;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.current-turn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.current-turn strong {
+  font-size: 1.2em;
+  display: block;
+  margin-top: 5px;
+}
+
+.dice-section {
+  margin-bottom: 20px;
+}
+
+.dice-result {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dice-display {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.dice {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: 3px solid #333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: roll 0.5s ease-out;
+}
+
+@keyframes roll {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(180deg) rotateY(180deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.dice-total {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.control-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.control-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #cccccc;
+}
+
+.control-button.primary {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  font-size: 1.2em;
+}
+
+.control-button.secondary {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}

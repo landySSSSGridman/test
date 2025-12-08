@@ -1,0 +1,160 @@
+.game-board {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.board-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 3px solid #333;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.board-row {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.board-row.top,
+.board-row.bottom {
+  height: 15%;
+}
+
+.board-middle {
+  display: flex;
+  flex: 1;
+}
+
+.board-column {
+  flex: 0 0 auto;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.game-info {
+  text-align: center;
+  color: white;
+}
+
+.game-info h2 {
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.game-logo {
+  font-size: 4em;
+  margin-top: 20px;
+}
+
+.board-space {
+  flex: 1;
+  background: white;
+  border: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  min-height: 60px;
+}
+
+.board-space:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.property-space {
+  border-top-width: 10px;
+}
+
+.special-space {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+}
+
+.space-header {
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6em;
+}
+
+.property-level {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.space-name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.75em;
+  text-align: center;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.space-price {
+  font-size: 0.7em;
+  color: #666;
+  text-align: center;
+  padding: 2px;
+}
+
+.space-players {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 20px;
+}
+
+.player-token {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .game-info h2 {
+    font-size: 2em;
+  }
+  
+  .game-logo {
+    font-size: 2em;
+  }
+  
+  .space-name {
+    font-size: 0.6em;
+  }
+  
+  .space-price {
+    font-size: 0.55em;
+  }
+}
