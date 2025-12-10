@@ -108,7 +108,9 @@ const BoardSpace: React.FC<BoardSpaceProps> = ({ space, players, onClick }) => {
             className="player-token" 
             style={{ backgroundColor: player.color }}
             title={player.name}
-          />
+          >
+            {player.name.charAt(0).toUpperCase()}
+          </div>
         ))}
       </div>
     </div>
